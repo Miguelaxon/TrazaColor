@@ -40,8 +40,11 @@ class FirstFragment : Fragment() {
 
         adapter.selectedIndividuales().observe(viewLifecycleOwner, {
             it?.let {
+                val bundle = Bundle()
+                bundle.putInt("id", it.id)
+                bundle.putString("categoria", it.categoria)
                 viewModel.selectedListIndividuales()
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
             }
         })
 
@@ -58,8 +61,11 @@ class FirstFragment : Fragment() {
 
         adapter2.selectedBolsas().observe(viewLifecycleOwner, {
             it?.let {
+                val bundle = Bundle()
+                bundle.putInt("id", it.id)
+                bundle.putString("categoria", it.categoria)
                 viewModel.selectedBolsas()
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
             }
         })
 
@@ -76,8 +82,11 @@ class FirstFragment : Fragment() {
 
         adapter3.selectedDAB().observe(viewLifecycleOwner, {
             it?.let {
+                val bundle = Bundle()
+                bundle.putInt("id", it.id)
+                bundle.putString("categoria", it.categoria)
                 viewModel.selectedDAB()
-                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+                findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment, bundle)
             }
         })
     }

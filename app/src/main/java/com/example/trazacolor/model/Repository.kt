@@ -13,7 +13,7 @@ class Repository(private val iDao: IDao) {
     fun converterIndividuales(list: List<Individuales>): List<EntityIndividuales> {
         val lista: MutableList<EntityIndividuales> = mutableListOf()
         list.map {
-            lista.add(EntityIndividuales(nombre = it.nombre, material =  it.material,
+            lista.add(EntityIndividuales(id = it.id, nombre = it.nombre, material =  it.material,
                     dimension =  it.dimension, precio =  it.precio))
         }
         return lista
@@ -36,10 +36,9 @@ class Repository(private val iDao: IDao) {
     fun converterBolsas(list: List<Bolsas>): List<EntityBolsas> {
         val lista: MutableList<EntityBolsas> = mutableListOf()
         list.map {
-            lista.add(EntityBolsas(nombre = it.nombre, material = it.material, chica = it.chica,
+            lista.add(EntityBolsas(id = it.id, nombre = it.nombre, material = it.material, chica = it.chica,
                     mediana = it.mediana, grande = it.grande, precio = it.precio,
-                    cantidad = it.cantidad)
-            )
+                    cantidad = it.cantidad))
         }
         return lista
     }
@@ -61,7 +60,7 @@ class Repository(private val iDao: IDao) {
     fun converterDAB(list: List<DyeAndBee>): List<EntityDyeAndBee> {
         val lista: MutableList<EntityDyeAndBee> = mutableListOf()
         list.map {
-            lista.add(EntityDyeAndBee(nombre = it.nombre, chica = it.chica, mediana = it.mediana,
+            lista.add(EntityDyeAndBee(id = it.id, nombre = it.nombre, chica = it.chica, mediana = it.mediana,
                     grande = it.grande, cantidad = it.cantidad, material = it.material,
                     precio = it.precio, extraGrande = it.extraGrande))
         }
