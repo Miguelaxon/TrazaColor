@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.trazacolor.R
 import com.example.trazacolor.databinding.ItemIndividualesBinding
 import com.example.trazacolor.local.EntityIndividuales
 
@@ -27,6 +29,8 @@ class AdapterIndividuales: RecyclerView.Adapter<AdapterIndividuales.ItemVH>() {
         }
         fun bind(entityIndividuales: EntityIndividuales) {
             binding.tvItemTitle.text = entityIndividuales.nombre
+            Glide.with(binding.ivItem).load(entityIndividuales.urlImage)
+                    .placeholder(R.drawable.ic_pregunta).into(binding.ivItem)
             itemView.setOnClickListener(this)
         }
     }

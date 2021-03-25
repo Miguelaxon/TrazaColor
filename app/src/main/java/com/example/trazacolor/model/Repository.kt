@@ -14,7 +14,7 @@ class Repository(private val iDao: IDao) {
         val lista: MutableList<EntityIndividuales> = mutableListOf()
         list.map {
             lista.add(EntityIndividuales(id = it.id, nombre = it.nombre, material =  it.material,
-                    dimension =  it.dimension, precio =  it.precio))
+                    dimension =  it.dimension, precio =  it.precio, urlImage = it.urlImage))
         }
         return lista
     }
@@ -36,9 +36,9 @@ class Repository(private val iDao: IDao) {
     fun converterBolsas(list: List<Bolsas>): List<EntityBolsas> {
         val lista: MutableList<EntityBolsas> = mutableListOf()
         list.map {
-            lista.add(EntityBolsas(id = it.id, nombre = it.nombre, material = it.material, chica = it.chica,
-                    mediana = it.mediana, grande = it.grande, precio = it.precio,
-                    cantidad = it.cantidad))
+            lista.add(EntityBolsas(id = it.id, nombre = it.nombre, material = it.material,
+                    chica = it.chica, mediana = it.mediana, grande = it.grande, precio = it.precio,
+                    cantidad = it.cantidad, urlImage = it.urlImage))
         }
         return lista
     }
@@ -60,9 +60,10 @@ class Repository(private val iDao: IDao) {
     fun converterDAB(list: List<DyeAndBee>): List<EntityDyeAndBee> {
         val lista: MutableList<EntityDyeAndBee> = mutableListOf()
         list.map {
-            lista.add(EntityDyeAndBee(id = it.id, nombre = it.nombre, chica = it.chica, mediana = it.mediana,
-                    grande = it.grande, cantidad = it.cantidad, material = it.material,
-                    precio = it.precio, extraGrande = it.extraGrande))
+            lista.add(EntityDyeAndBee(id = it.id, nombre = it.nombre, chica = it.chica,
+                    mediana = it.mediana, grande = it.grande, cantidad = it.cantidad,
+                    material = it.material, precio = it.precio, extraGrande = it.extraGrande,
+                    urlImage = it.urlImage))
         }
         return lista
     }

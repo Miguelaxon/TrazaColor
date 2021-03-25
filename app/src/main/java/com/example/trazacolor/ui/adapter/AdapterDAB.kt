@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.example.trazacolor.R
 import com.example.trazacolor.databinding.ItemDabBinding
 import com.example.trazacolor.local.EntityDyeAndBee
 
@@ -24,6 +26,8 @@ class AdapterDAB: RecyclerView.Adapter<AdapterDAB.DABVH>() {
         : RecyclerView.ViewHolder(binding.root), View.OnClickListener {
             fun bind(entityDyeAndBee: EntityDyeAndBee) {
                 binding.tvDABTitle.text = entityDyeAndBee.nombre
+                Glide.with(binding.ivDAB).load(entityDyeAndBee.urlImage)
+                        .placeholder(R.drawable.ic_pregunta).into(binding.ivDAB)
                 itemView.setOnClickListener(this)
             }
 

@@ -7,6 +7,7 @@ data class Individuales(@SerializedName("id") val id: Int,
                         @SerializedName("material") val material: String,
                         @SerializedName("dimension") val dimension: String,
                         @SerializedName("precio") val precio: Int,
+                        @SerializedName("urlImage") val urlImage: String,
                         val categoria: String)
 
 data class Bolsas(@SerializedName("id") val id: Int,
@@ -17,6 +18,7 @@ data class Bolsas(@SerializedName("id") val id: Int,
                   @SerializedName("grande") val grande: String,
                   @SerializedName("cantidad") val cantidad: String,
                   @SerializedName("precio") val precio: Int,
+                  @SerializedName("urlImage") val urlImage: String,
                   val categoria: String)
 
 data class DyeAndBee(@SerializedName("id") val id: Int,
@@ -28,4 +30,5 @@ data class DyeAndBee(@SerializedName("id") val id: Int,
                      @SerializedName("xl") val extraGrande: String,
                      @SerializedName("material") val material: String,
                      @SerializedName("precio") val precio: Int,
+                     @SerializedName("urlImage") val urlImage: String,
                      val categoria: String)
